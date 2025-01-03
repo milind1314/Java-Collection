@@ -1,6 +1,7 @@
 package jan_01.employee_directory;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,8 +32,13 @@ public class Directory
 	// updateEmployee method is used to update employee based on index position
 	public void updateEmployee()
 	{
-		System.out.print("Enter index of employee to update: ");
-        int index = sc.nextInt();
+		int index = 0;
+		try {
+			System.out.print("Enter index of employee to update: ");
+	        index = sc.nextInt();
+		} catch (InputMismatchException e) {
+			System.err.println("ERROR : Invalid Input! Input should be a positive number and not greater than size of Arraylist.");
+		}
         sc.nextLine(); // Consume newline
 
         if (index >= 0 && index < employees.size()) {
@@ -57,9 +63,13 @@ public class Directory
 	// deleteEmployee method is used to delete employee based on index position
 	public void deleteEmployee() 
 	{
-		 System.out.print("Enter index of employee to delete: ");
-	        int index = sc.nextInt();
-
+		int index = 0;
+		 try {
+			 System.out.print("Enter index of employee to delete: ");
+		        index = sc.nextInt();
+		} catch (InputMismatchException e) {
+			System.err.println("ERROR : Invalid Input! Input should be a positive number and not greater than size of Arraylist.");
+		}
 	        if (index >= 0 && index < employees.size()) 
 	        {
 	        	employees.remove(index);
