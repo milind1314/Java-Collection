@@ -1,12 +1,14 @@
 package jan_08.collectionExamples;
 
-import java.util.TreeSet;
+import java.util.*;
 
-public class CollectionExample1 {
+public class CollectionExample3 
+{
 	public static void main(String[] args) {
-		TreeSet<String> tree = new TreeSet<>();
+		Set<String> tree = new TreeSet<>();
 		tree.add("25");
 		tree.add("Naresh");
+		tree.add("37");
 		tree.add("A");
 		tree.add("37");
 		for(String str: tree)
@@ -14,5 +16,5 @@ public class CollectionExample1 {
 	}
 }
 
-
-//Printing in ascending order as per ascii/unicode value.
+//sort in natural order based on unicode
+//set does not allow duplicates.
